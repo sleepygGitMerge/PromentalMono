@@ -118,3 +118,11 @@
         </div>
     </div>
 </main>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="3 2 10 10" width="100%" height="100%">
+                            <image
+                                    width="150%"
+                                    height="150%"
+                                    xlink:href="big_man.png"
+                                    preserveAspectRatio="xMidYMid meet" />
+                        </svg>
