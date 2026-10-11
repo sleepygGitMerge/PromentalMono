@@ -354,7 +354,36 @@
             </div>
         </section>
 
-        <section id="cennik" class="py-20 bg-surface">
+        <section id="galeria" class="py-20 lg:py-28 bg-surface">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Galeria</h2>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mb-8 rounded-full"></div>
+                <p class="text-xl text-slate-600 "> Zapraszamy do obejrzenia naszej galerii zdjęć.</p>
+                <div class="max-w-4xl mx-auto">
+                <!-- Główne zdjęcie i nawigacja -->
+                <div class="relative group rounded-lg overflow-hidden shadow-sm border border-stone-100 bg-stone-200 aspect-[4/3] md:aspect-[16/9] flex items-center justify-center">
+                    <img id="gallery-main-img" src="https://placehold.co/1200x800/d6d3d1/44403c?text=Zdjecie+1" alt="Zdjęcie główne" class="w-full h-full object-cover transition-opacity duration-300">
+                    
+                    <!-- Lewa strzałka -->
+                    <button id="gallery-prev" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-stone-800 p-2 md:p-3 rounded-full shadow-md transition opacity-100 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 z-10" aria-label="Poprzednie zdjęcie">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <!-- Prawa strzałka -->
+                    <button id="gallery-next" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-stone-800 p-2 md:p-3 rounded-full shadow-md transition opacity-100 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 z-10" aria-label="Następne zdjęcie">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Miniaturki -->
+                <!-- Klasy dla telefonów: przewijanie w poziomie, chowanie paska przewijania -->
+                <div id="gallery-thumbnails" class="flex gap-2 sm:gap-4 mt-4 overflow-x-auto pb-2 snap-x" style="scrollbar-width: none;">
+                    <!-- Miniaturki wygenerują się tutaj automatycznie przez JS -->
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="cennik" class="py-20 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-slate-900 mb-4">Cennik</h2>
@@ -405,7 +434,56 @@
                 </p>
             </div>
         </section>
-
+        <section id="umow-sie" class="py-20 lg:py-28 bg-surface">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Umów się na wizytę</h2>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mb-8 rounded-full"></div>
+                <!-- Formularz Kontaktowy -->
+        <div class="bg-white p-6 sm:p-8 rounded-lg shadow-sm border border-stone-200 mt-8">
+            <h3 class="text-xl font-semibold text-emerald-700 mb-6">Napisz do nas</h3>
+            
+            <!-- Atrybut 'action' będzie wymagał podpięcia pod skrypt wysyłający maile, np. Formspree lub skrypt PHP -->
+            <form action="#" method="POST" class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- Imię -->
+                    <div>
+                        <label for="imie" class="block text-sm font-medium text-stone-700 mb-1">Imię <span class="text-emerald-600">*</span></label>
+                        <input type="text" id="imie" name="imie" required placeholder="Jan" class="w-full bg-stone-50 border border-stone-200 rounded-md px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition">
+                    </div>
+                    <!-- Nazwisko -->
+                    <div>
+                        <label for="nazwisko" class="block text-sm font-medium text-stone-700 mb-1">Nazwisko <span class="text-emerald-600">*</span></label>
+                        <input type="text" id="nazwisko" name="nazwisko" required placeholder="Kowalski" class="w-full bg-stone-50 border border-stone-200 rounded-md px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition">
+                    </div>
+                    <!-- E-mail -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-stone-700 mb-1">E-mail <span class="text-emerald-600">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="jan.kowalski@email.com" class="w-full bg-stone-50 border border-stone-200 rounded-md px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition">
+                    </div>
+                    <!-- Numer telefonu -->
+                    <div>
+                        <label for="telefon" class="block text-sm font-medium text-stone-700 mb-1">Numer telefonu</label>
+                        <input type="tel" id="telefon" name="telefon" placeholder="+48 123 456 789" class="w-full bg-stone-50 border border-stone-200 rounded-md px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition">
+                    </div>
+                </div>
+                
+                <!-- Wiadomość -->
+                <div>
+                    <label for="wiadomosc" class="block text-sm font-medium text-stone-700 mb-1">Wiadomość <span class="text-emerald-600">*</span></label>
+                    <textarea id="wiadomosc" name="wiadomosc" rows="4" required placeholder="Treść Twojej wiadomości..." class="w-full bg-stone-50 border border-stone-200 rounded-md px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition resize-y"></textarea>
+                </div>
+                
+                <!-- Przycisk Wyślij -->
+                <div class="pt-2 text-right">
+                    <button type="submit" class="w-full md:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-8 rounded-md transition shadow-sm flex items-center justify-center gap-2 ml-auto">
+                        <span>Wyślij wiadomość</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+            </div>
+        </section>
         <section id="kontakt" class="bg-brand-1000 text-white py-20 relative overflow-hidden">
             <!-- Dekoracja tła dla kontrastu -->
             <div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-400 via-slate-900 to-slate-900"></div>
@@ -487,7 +565,7 @@
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
             // Ustawienie aktualnego roku w stopce
             document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -518,6 +596,126 @@
                     header.classList.add('shadow-sm');
                 }
             });
+            const gallerySection = document.getElementById('galeria');
+            const mainImg = document.getElementById('gallery-main-img');
+            const prevBtn = document.getElementById('gallery-prev');
+            const nextBtn = document.getElementById('gallery-next');
+            const thumbContainer = document.getElementById('gallery-thumbnails');
+            
+            // Ensure offset calculations are relative to the container
+            thumbContainer.style.position = 'relative';
+
+            let images = [];
+            let currentIndex = 0;
+            let slideshowInterval;
+            const delay = 5000; // Czas zmiany slajdu
+
+            // Ustawienia ścieżek
+            const mainFolderPath = 'gallery/';
+            const thumbFolderPath = 'gallery/minis/';
+            const extension = '.jpg'; // Domyślne rozszerzenie
+
+            // Funkcja asynchroniczna sprawdzająca, czy plik graficzny istnieje
+            const checkImageExists = (index) => {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.onload = () => resolve(true);
+                    img.onerror = () => resolve(false);
+                    img.src = `${mainFolderPath}${index}${extension}`;
+                });
+            };
+
+            // Dynamiczne wczytywanie dostępnych zdjęć
+            let imageIndex = 1;
+            while (true) {
+                const exists = await checkImageExists(imageIndex);
+                if (exists) {
+                    images.push({
+                        src: `${mainFolderPath}${imageIndex}${extension}`,
+                        thumb: `${thumbFolderPath}${imageIndex}${extension}`,
+                        alt: `Wnętrze gabinetu ${imageIndex}`
+                    });
+                    imageIndex++;
+                } else {
+                    break;
+                }
+            }
+
+            // Jeśli nie znaleziono żadnych zdjęć, ukryj całą sekcję galerii
+            if (images.length === 0) {
+                gallerySection.style.display = 'none';
+                return;
+            }
+
+            mainImg.src = images[0].src;
+            mainImg.alt = images[0].alt;
+
+            // Wygenerowanie miniaturek
+            images.forEach((img, index) => {
+                const btn = document.createElement('button');
+                btn.className = `flex-shrink-0 w-24 h-16 sm:w-28 sm:h-20 rounded-md overflow-hidden border-2 transition snap-center cursor-pointer ${index === currentIndex ? 'border-emerald-600 opacity-100' : 'border-transparent opacity-60 hover:opacity-100'}`;
+                btn.onclick = () => goToImage(index);
+                btn.innerHTML = `<img src="${img.thumb}" alt="Miniaturka: ${img.alt}" class="w-full h-full object-cover pointer-events-none">`;
+                thumbContainer.appendChild(btn);
+            });
+
+            // Funkcja aktualizująca widok
+            const updateGallery = (index) => {
+                mainImg.style.opacity = 0.5; 
+                setTimeout(() => {
+                    mainImg.src = images[index].src;
+                    mainImg.alt = images[index].alt;
+                    mainImg.style.opacity = 1;
+                }, 150);
+
+                const thumbs = thumbContainer.children;
+                for(let i = 0; i < thumbs.length; i++) {
+                    if(i === index) {
+                        thumbs[i].classList.add('border-emerald-600', 'opacity-100');
+                        thumbs[i].classList.remove('border-transparent', 'opacity-60');
+                        
+                        // Bezpieczne przewijanie tylko w poziomie (nie skacze na stronie głównej)
+                        const scrollPos = thumbs[i].offsetLeft - (thumbContainer.clientWidth / 2) + (thumbs[i].clientWidth / 2);
+                        thumbContainer.scrollTo({
+                            left: scrollPos,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        thumbs[i].classList.add('border-transparent', 'opacity-60');
+                        thumbs[i].classList.remove('border-emerald-600', 'opacity-100');
+                    }
+                }
+            };
+
+            const nextImage = () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateGallery(currentIndex);
+            };
+
+            const prevImage = () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateGallery(currentIndex);
+            };
+
+            const goToImage = (index) => {
+                currentIndex = index;
+                updateGallery(currentIndex);
+                resetSlideshow();
+            };
+
+            const startSlideshow = () => {
+                slideshowInterval = setInterval(nextImage, delay);
+            };
+
+            const resetSlideshow = () => {
+                clearInterval(slideshowInterval);
+                startSlideshow();
+            };
+
+            nextBtn.addEventListener('click', () => { nextImage(); resetSlideshow(); });
+            prevBtn.addEventListener('click', () => { prevImage(); resetSlideshow(); });
+
+            startSlideshow();
         });
     </script>
 </body>
