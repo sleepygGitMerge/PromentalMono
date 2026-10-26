@@ -599,7 +599,7 @@
                 document.documentElement.classList.toggle('dark');
                 const isDark = document.documentElement.classList.contains('dark');
                 // Ciasteczko zapamiętujące wybór (ważne rok)
-                document.cookie = `theme=${isDark ? 'dark' : 'light'}; max-age=31536000; path=/`;
+                document.cookie = `theme=${isDark ? 'light' : 'dark'}; max-age=31536000; path=/`;
             });
         }
 
